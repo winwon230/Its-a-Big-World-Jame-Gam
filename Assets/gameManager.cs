@@ -14,12 +14,13 @@ public class gameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startGame(); // add tutorial later if i want to
+        startGame(); // add shop as well and welcome text first
     }
 
     public void startGame()
     {
         currentGameState = gameState.Play;
+        spawner.startLevel1();
     }
 
     // Update is called once per frame

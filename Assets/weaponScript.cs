@@ -7,8 +7,9 @@ using UnityEngine;
 public class weaponScript : MonoBehaviour
 {
     public GameObject needle;
+    private gameManager gameManager;
 
-    public float detectionRange = 3f;
+    public float detectionRange = 4f;
     public float fireRate = 100f;
     public LayerMask enemyLayer;
 
@@ -16,32 +17,35 @@ public class weaponScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = FindFirstObjectByType<gameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        cooldown -= Time.deltaTime;
-        Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, detectionRange, enemyLayer);
+        if(gameManager.currentGameState == gameManager.gameState.Play)
+        {
+            cooldown -= Time.deltaTime;
+            Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, detectionRange, enemyLayer);
         
-        Transform target = null;
-        float closestDistance = Mathf.Infinity;
+            Transform target = null;
+            float closestDistance = Mathf.Infinity;
 
-        foreach(Collider2D enemy in enemies)
-        {
-            float distance = Vector2.Distance(enemy.transform.position, transform.position);
-            if(distance < closestDistance)
+            foreach(Collider2D enemy in enemies)
             {
-                closestDistance = distance;
-                target = enemy.transform;
+                float distance = Vector2.Distance(enemy.transform.position, transform.position);
+                if(distance < closestDistance)
+                {
+                    closestDistance = distance;
+                    target = enemy.transform;
+                }
             }
-        }
 
-        if(target != null && cooldown <= 0f)
-        {
-            Shoot(target);
-            cooldown = 1f/fireRate;
+            if(target != null && cooldown <= 0f)
+            {
+                Shoot(target);
+                cooldown = 1f/fireRate;
+            }
         }
 
 

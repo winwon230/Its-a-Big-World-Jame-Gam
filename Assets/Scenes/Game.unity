@@ -186,7 +186,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -3.7501717, y: -0.1363678}
+  m_Offset: {x: -1.8866377, y: -0.1363678}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -197,7 +197,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.500343, y: 45.729317}
+  m_Size: {x: 4.7732754, y: 45.729317}
   m_EdgeRadius: 0
 --- !u!1 &315370070
 GameObject:
@@ -263,7 +263,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -3.7501717, y: -0.477293}
+  m_Offset: {x: -1.7569432, y: -0.477293}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -274,7 +274,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.500343, y: 52.95692}
+  m_Size: {x: 4.5138865, y: 52.95692}
   m_EdgeRadius: 0
 --- !u!1 &519420028
 GameObject:
@@ -287,7 +287,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -368,6 +368,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1338108102}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &573217061
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 573217062}
+  m_Layer: 0
+  m_Name: Test object for position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &573217062
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573217061}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 23.1, y: 15.2, z: 0.71328235}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &955178812
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +463,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -3.7501717, y: -0.477293}
+  m_Offset: {x: -6.022774, y: -0.477293}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -443,7 +474,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.500343, y: 52.95692}
+  m_Size: {x: 3.9551382, y: 52.95692}
   m_EdgeRadius: 0
 --- !u!1 &982296912
 GameObject:
@@ -556,7 +587,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -3.7501717, y: -0.1363678}
+  m_Offset: {x: -5.5228004, y: -0.1363678}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -567,7 +598,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.500343, y: 45.729317}
+  m_Size: {x: 4.9550858, y: 45.729317}
   m_EdgeRadius: 0
 --- !u!1 &1251701747
 GameObject:
@@ -33174,7 +33205,7 @@ GameObject:
   - component: {fileID: 1338108103}
   - component: {fileID: 1338108104}
   - component: {fileID: 1338108105}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33366,13 +33397,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e69c526c46e4d3c9d496713bf97a43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  needle: {fileID: 0}
-  firePoint: {fileID: 0}
+  needle: {fileID: 2830243960154969654, guid: b8cb5c4f29d0e4247ba89c80341a3cde, type: 3}
   detectionRange: 3
   fireRate: 1
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &1354728584
 GameObject:
   m_ObjectHideFlags: 0
@@ -33403,7 +33433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentGameState: 0
-  spawner: {fileID: 0}
+  spawner: {fileID: 1578131028}
 --- !u!4 &1354728586
 Transform:
   m_ObjectHideFlags: 0
@@ -33414,37 +33444,6 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.6771264, y: -1.2746493, z: 0.020706978}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1400972705
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1400972706}
-  m_Layer: 0
-  m_Name: Needle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1400972706
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1400972705}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.9705161, y: 0.29953125, z: 0.7277795}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -33514,14 +33513,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d82514789ef344dd9b5d6c03b370d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mob1: {fileID: 0}
-  mob2: {fileID: 0}
-  manager: {fileID: 0}
+  mob: {fileID: 8071328103302351590, guid: 77350a7f1b63340bfa252b29c378766f, type: 3}
+  manager: {fileID: 1354728585}
   levelStarted: 0
+  t1Count: 0
+  t2Count: 0
+  t3Count: 0
+  spawnDelay: 0.3
   currentLevel: 0
-  mob1Count: 0
-  mob2Count: 0
-  mob3Count: 0
+  enemyCount: 0
+  currentEnemyCount: 0
   generalMobCount: 0
 --- !u!4 &1578131029
 Transform:
@@ -33547,4 +33548,4 @@ SceneRoots:
   - {fileID: 982296914}
   - {fileID: 1354728586}
   - {fileID: 1578131029}
-  - {fileID: 1400972706}
+  - {fileID: 573217062}

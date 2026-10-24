@@ -23,15 +23,22 @@ public class enemyScript : MonoBehaviour
             maxHealth = 5f;
             currentHealth = maxHealth;
             damage = 1f;
-            speed = 3f;
+            speed = 4.5f;
+        }
+
+        else if(enemyType == "BEETLE")
+        {
+            maxHealth = 12f;
+            damage = 3f;
+            speed = 3.5f;
         }
 
         else if(enemyType == "SPIDER")
         {
-            maxHealth = 20f;
+            maxHealth = 100f;
             currentHealth = maxHealth;
-            damage = 3f;
-            speed = 4f;
+            damage = 12f;
+            speed = 2f;
         }
         previousHealth = currentHealth;
     }
@@ -43,6 +50,11 @@ public class enemyScript : MonoBehaviour
         {
             StartCoroutine(flashRed());
             previousHealth = currentHealth;
+        }
+
+        if(currentHealth <= 0f)
+        {
+            Destroy(gameObject); //maybe even add a death animation later
         }
     }
 
