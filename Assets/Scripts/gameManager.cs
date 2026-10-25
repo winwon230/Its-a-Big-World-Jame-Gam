@@ -58,5 +58,10 @@ public class gameManager : MonoBehaviour
                 menu.SetActive(false);
             }
         }
+        if(currentGameState == gameState.Lost)
+        {
+            SceneManager.LoadSceneAsync(0);
+        }
     }
+
 }
