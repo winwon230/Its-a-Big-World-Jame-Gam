@@ -14,6 +14,7 @@ public class sceneManager : MonoBehaviour
     public void startGame()
     {
         SceneManager.LoadSceneAsync(1);
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame

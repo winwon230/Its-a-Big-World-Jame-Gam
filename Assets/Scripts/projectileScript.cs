@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Callbacks;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class projectileScript : MonoBehaviour
 {
     private float speed = 3f;
+    private float damage;
     private Rigidbody2D rb;
     private Vector2 direction;
     // Start is called before the first frame update
@@ -28,7 +27,7 @@ public class projectileScript : MonoBehaviour
             enemyScript enemyScript = other.GetComponent<enemyScript>();
             if(enemyScript != null)
             {
-                enemyScript.currentHealth -= 3f;
+                enemyScript.currentHealth -= damage;
             }
 
             Destroy(gameObject);
@@ -36,8 +35,9 @@ public class projectileScript : MonoBehaviour
         }
     }
 
-    public void shootTowards(Transform target)
+    public void shootTowards(Transform target, float amount)
     {
+        damage = amount;
         direction = (target.position - transform.position).normalized;
         transform.up = direction;
         rb.velocity = direction * speed;

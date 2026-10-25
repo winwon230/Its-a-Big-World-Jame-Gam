@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -7,6 +8,10 @@ public class mobSpawner : MonoBehaviour
 {
     public GameObject mob;
     public gameManager manager;
+
+    private weaponScript weaponScript;// this is for the shop functions
+
+    public TMP_Text waveText;
 
     public bool levelStarted = false;
 
@@ -24,6 +29,7 @@ public class mobSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        weaponScript = FindFirstObjectByType<weaponScript>();
         currentLevel = 1f;
     }
 
@@ -70,18 +76,26 @@ public class mobSpawner : MonoBehaviour
     public void levelComplete()
     {
         currentLevel += 1f;
-        enemyCount = 10f + (currentLevel - 1f)*5f; //10 at base and 5 per level inc
+        enemyCount = 10f + (currentLevel - 1f)*5f; //10 at base and 10 per level inc
+        t1Count = 0.9f * enemyCount;
+        t2Count = 0.1f * enemyCount;
+        t3Count = Mathf.FloorToInt(0.02f * enemyCount);
+        weaponScript.openShop();
 
     }
 
     public void startNextlevel()
     {
-        
+        weaponScript.shop.SetActive(false);
+        weaponScript.resetHealth();
+        levelStarted = true;
+        StartCoroutine(spawnWithDelay());
     }
 
     // Update is called once per frame
     void Update()
     {
+        waveText.text = "Current Level: " + currentLevel.ToString();
         currentEnemyCount = GameObject.FindGameObjectsWithTag("ENEMY").Length;
         if(currentEnemyCount < 1f && levelStarted == true)
         {
