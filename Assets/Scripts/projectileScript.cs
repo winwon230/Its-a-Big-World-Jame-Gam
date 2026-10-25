@@ -28,7 +28,7 @@ public class projectileScript : MonoBehaviour
             enemyScript enemyScript = other.GetComponent<enemyScript>();
             if(enemyScript != null)
             {
-                enemyScript.currentHealth -= 1f;
+                enemyScript.currentHealth -= 3f;
             }
 
             Destroy(gameObject);

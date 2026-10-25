@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Callbacks;
 using UnityEngine;
 
 public class enemyScript : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
     private Color originalColour;
+    private playerMovement playerScript;
+    private Transform playerTransform;
+    private Rigidbody2D rb;
 
     public float maxHealth;
     public float currentHealth;
@@ -16,6 +20,9 @@ public class enemyScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+        playerScript = FindFirstObjectByType<playerMovement>();
+        playerTransform = playerScript.transform;
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColour = spriteRenderer.color;
         if(enemyType == "ANT")
@@ -23,14 +30,15 @@ public class enemyScript : MonoBehaviour
             maxHealth = 5f;
             currentHealth = maxHealth;
             damage = 1f;
-            speed = 4.5f;
+            speed = 1f;
         }
 
         else if(enemyType == "BEETLE")
         {
             maxHealth = 12f;
+            currentHealth = maxHealth;
             damage = 3f;
-            speed = 3.5f;
+            speed = 1f;
         }
 
         else if(enemyType == "SPIDER")
@@ -46,6 +54,11 @@ public class enemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Vector2.Distance(playerTransform.position, transform.position) > 0.1f)
+        {
+            Vector2 direction = (playerTransform.position - transform.position).normalized;
+            rb.velocity = direction * speed;   
+        }
         if(previousHealth != currentHealth)
         {
             StartCoroutine(flashRed());

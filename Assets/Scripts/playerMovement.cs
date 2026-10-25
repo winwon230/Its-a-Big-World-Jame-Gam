@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour 
 {
+    private Animator animator;
     private float moveSpeed = 5f;
     private float damage = 1f;
     private Vector2 move;
@@ -12,6 +13,7 @@ public class playerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -20,7 +22,18 @@ public class playerMovement : MonoBehaviour
     {
         move.x = Input.GetAxisRaw("Horizontal");
         move.y = Input.GetAxisRaw("Vertical");
+        animator.SetFloat("InputX", move.x);
+        animator.SetFloat("InputY", move.y);
         move = move.normalized * moveSpeed;
+        if(move.magnitude > 0f)
+        {
+            animator.SetBool("isWalking", true);
+        }
+
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
     }
 
     void FixedUpdate()

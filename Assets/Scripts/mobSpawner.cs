@@ -34,13 +34,11 @@ public class mobSpawner : MonoBehaviour
         t2Count = 1f;
         t3Count = 0f;
         levelStarted = true;
-        StartCoroutine(spawnWithDelay("T1"));
+        StartCoroutine(spawnWithDelay()); // shoudl spawn all mobs
     }
 
-    private IEnumerator spawnWithDelay(string type)
+    private IEnumerator spawnWithDelay()
     {
-        if(type == "T1")
-        {
             for(int i = 0; i<t1Count; i++)
             {
                 Vector2 position = new Vector2(Random.Range(-20f, 20f), Random.Range(-15f, 15f));
@@ -67,7 +65,6 @@ public class mobSpawner : MonoBehaviour
                 spiderScript.enemyType = "SPIDER";
                 yield return new WaitForSeconds(spawnDelay);                
             }
-        }
     }
 
     public void levelComplete()
